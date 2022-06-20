@@ -180,8 +180,8 @@ always @(posedge clk) begin : joy_block
 		CLK_DIV <= CLK_DIV + 1'b1;
 		if (CLK_DIV==100) begin
 			CLK_DIV <= 0;
-			if (seen_joy1 && JOY1_X) JOY1_X <= JOY1_X - 1'b1;
-			if (seen_joy1 && JOY1_Y) JOY1_Y <= JOY1_Y - 1'b1;
+			if (JOY1_X) JOY1_X <= JOY1_X - 1'b1;
+			if (JOY1_Y) JOY1_Y <= JOY1_Y - 1'b1;
 			if (seen_joy2 && JOY2_X) JOY2_X <= JOY2_X - 1'b1;
 			if (seen_joy2 && JOY2_Y) JOY2_Y <= JOY2_Y - 1'b1;
 		end
